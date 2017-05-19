@@ -1,7 +1,7 @@
-# Logrus <img src="http://i.imgur.com/hTeVwmJ.png" width="40" height="40" alt=":walrus:" class="emoji" title=":walrus:"/>&nbsp;[![Build Status](https://travis-ci.org/sirupsen/logrus.svg?branch=master)](https://travis-ci.org/sirupsen/logrus)&nbsp;[![GoDoc](https://godoc.org/github.com/sirupsen/logrus?status.svg)](https://godoc.org/github.com/sirupsen/logrus)
+# Logrus <img src="http://i.imgur.com/hTeVwmJ.png" width="40" height="40" alt=":walrus:" class="emoji" title=":walrus:"/>&nbsp;[![Build Status](https://travis-ci.org/bobtfish/logrus.svg?branch=master)](https://travis-ci.org/sirupsen/logrus)&nbsp;[![GoDoc](https://godoc.org/github.com/sirupsen/logrus?status.svg)](https://godoc.org/github.com/sirupsen/logrus)
 
 **Seeing weird case-sensitive problems?** See [this
-issue](https://github.com/sirupsen/logrus/issues/451#issuecomment-264332021).
+issue](https://github.com/bobtfish/logrus/issues/451#issuecomment-264332021).
 This change has been reverted. I apologize for causing this. I greatly
 underestimated the impact this would have. Logrus strives for stability and
 backwards compatibility and failed to provide that.
@@ -56,7 +56,7 @@ exit status 1
 
 The organization's name was changed to lower-case--and this will not be changed
 back. If you are getting import conflicts due to case sensitivity, please use
-the lower-case import: `github.com/sirupsen/logrus`.
+the lower-case import: `github.com/bobtfish/logrus`.
 
 #### Example
 
@@ -66,7 +66,7 @@ The simplest way to use Logrus is simply the package-level exported logger:
 package main
 
 import (
-  log "github.com/sirupsen/logrus"
+  log "github.com/bobtfish/logrus"
 )
 
 func main() {
@@ -77,7 +77,7 @@ func main() {
 ```
 
 Note that it's completely api-compatible with the stdlib logger, so you can
-replace your `log` imports everywhere with `log "github.com/sirupsen/logrus"`
+replace your `log` imports everywhere with `log "github.com/bobtfish/logrus"`
 and you'll now have the flexibility of Logrus. You can customize it all you
 want:
 
@@ -86,7 +86,7 @@ package main
 
 import (
   "os"
-  log "github.com/sirupsen/logrus"
+  log "github.com/bobtfish/logrus"
 )
 
 func init() {
@@ -137,7 +137,7 @@ package main
 
 import (
   "os"
-  "github.com/sirupsen/logrus"
+  "github.com/bobtfish/logrus"
 )
 
 // Create a new instance of the logger. You can have any number of instances.
@@ -212,9 +212,9 @@ Logrus comes with [built-in hooks](hooks/). Add those, or your custom hook, in
 
 ```go
 import (
-  log "github.com/sirupsen/logrus"
+  log "github.com/bobtfish/logrus"
   "gopkg.in/gemnasium/logrus-airbrake-hook.v2" // the package is named "aibrake"
-  logrus_syslog "github.com/sirupsen/logrus/hooks/syslog"
+  logrus_syslog "github.com/bobtfish/logrus/hooks/syslog"
   "log/syslog"
 )
 
@@ -328,7 +328,7 @@ could do:
 
 ```go
 import (
-  log "github.com/sirupsen/logrus"
+  log "github.com/bobtfish/logrus"
 )
 
 init() {
@@ -357,9 +357,9 @@ The built-in logging formatters are:
     field to `true`.  To force no colored output even if there is a TTY  set the
     `DisableColors` field to `true`. For Windows, see
     [github.com/mattn/go-colorable](https://github.com/mattn/go-colorable).
-  * All options are listed in the [generated docs](https://godoc.org/github.com/sirupsen/logrus#TextFormatter).
+  * All options are listed in the [generated docs](https://godoc.org/github.com/bobtfish/logrus#TextFormatter).
 * `logrus.JSONFormatter`. Logs fields as JSON.
-  * All options are listed in the [generated docs](https://godoc.org/github.com/sirupsen/logrus#JSONFormatter).
+  * All options are listed in the [generated docs](https://godoc.org/github.com/bobtfish/logrus#JSONFormatter).
 
 Third party logging formatters:
 
@@ -442,8 +442,8 @@ Logrus has a built in facility for asserting the presence of log messages. This 
 
 ```go
 import(
-  "github.com/sirupsen/logrus"
-  "github.com/sirupsen/logrus/hooks/null"
+  "github.com/bobtfish/logrus"
+  "github.com/bobtfish/logrus/hooks/null"
   "github.com/stretchr/testify/assert"
   "testing"
 )
